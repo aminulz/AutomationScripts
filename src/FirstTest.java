@@ -47,7 +47,7 @@ public class FirstTest {
     @Test
     public void testSmtestUsers() throws Exception {
 
-        for (int i = 1700011620; i < 1800000000; ) {
+        for (int i = 1700019700; i < 1800000000; ) {
             try {
                 this.driver.get("https://friendship.ruchiexplorelimitless.com/quiz/64c77910dd4f6");
 //        this.driver.maximize_window();
