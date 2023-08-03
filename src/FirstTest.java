@@ -47,7 +47,7 @@ public class FirstTest {
     @Test
     public void testSmtestUsers() throws Exception {
 
-        for (int i = 1700019700; i < 1800000000; ) {
+        for (int i = 1700030100; i < 1800000000; ) {
             try {
                 this.driver.get("https://friendship.ruchiexplorelimitless.com/quiz/64c77910dd4f6");
 //        this.driver.maximize_window();
@@ -55,7 +55,7 @@ public class FirstTest {
 //        this.driver.findElement(By.id("hint-toggle")).click();
                 this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[2]/form/div/div[1]/div[1]/label/input")).clear();
                 this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[2]/form/div/div[1]/div[2]/label/input")).clear();
-                this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[2]/form/div/div[1]/div[1]/label/input")).sendKeys("Faruk");
+                this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[2]/form/div/div[1]/div[1]/label/input")).sendKeys("Diponker Sarker");
                 this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[2]/form/div/div[1]/div[2]/label/input")).sendKeys("0" + i);
                 this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[2]/form/div/div[1]/button")).click();
                 this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[3]/div[2]/div/div[3]/div/div[3]/div/button")).click();
