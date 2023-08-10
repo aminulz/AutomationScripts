@@ -37,6 +37,7 @@ public class FirstTest {
         op.setPageLoadStrategy(PageLoadStrategy.EAGER);
         op.setExperimentalOption("prefs", prefs);
         op.addArguments("--remote-allow-origins=*");
+        op.addArguments("--mute-audio");
         this.driver = new ChromeDriver(op);
 //        this.driver.page_load_strategy = "none";
         this.baseUrl = "https://www.google.com/";
@@ -47,7 +48,8 @@ public class FirstTest {
     @Test
     public void testSmtestUsers() throws Exception {
 
-        for (int i = 1700030100; i < 1800000000; ) {
+        for (int i = 1800010210; i < 1900000000; ) {
+            System.out.println(i+1);
             try {
                 this.driver.get("https://friendship.ruchiexplorelimitless.com/quiz/64c77910dd4f6");
 //        this.driver.maximize_window();
@@ -55,7 +57,7 @@ public class FirstTest {
 //        this.driver.findElement(By.id("hint-toggle")).click();
                 this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[2]/form/div/div[1]/div[1]/label/input")).clear();
                 this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[2]/form/div/div[1]/div[2]/label/input")).clear();
-                this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[2]/form/div/div[1]/div[1]/label/input")).sendKeys("Diponker Sarker");
+                this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[2]/form/div/div[1]/div[1]/label/input")).sendKeys("0" + i);
                 this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[2]/form/div/div[1]/div[2]/label/input")).sendKeys("0" + i);
                 this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[2]/form/div/div[1]/button")).click();
                 this.driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[2]/div[3]/div[2]/div/div[3]/div/div[3]/div/button")).click();
@@ -93,7 +95,19 @@ public class FirstTest {
                 }
             } catch (Exception e) {
                 this.driver.quit();
-                break;
+                Map<String, Object> prefs = new HashMap<String, Object>();
+                prefs.put("profile.managed_default_content_settings.images", 2);
+                //adding capabilities to browser
+                ChromeOptions op = new ChromeOptions();
+                op.setPageLoadStrategy(PageLoadStrategy.EAGER);
+                op.setExperimentalOption("prefs", prefs);
+                op.addArguments("--remote-allow-origins=*");
+                op.addArguments("--mute-audio");
+                this.driver = new ChromeDriver(op);
+//        this.driver.page_load_strategy = "none";
+                this.baseUrl = "https://www.google.com/";
+                this.driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+                this.js = (JavascriptExecutor) this.driver;
             }
         }
     }
